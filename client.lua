@@ -1,15 +1,15 @@
 Citizen.CreateThread(function()
-    for key, blipInfo in pairs(Config.Blips) do
-        local blip = AddBlipForCoord(blipInfo.pos)
+    for k, v in pairs(Config.Blips) do
+        local blip = AddBlipForCoord(v.pos)
 
-        SetBlipSprite(blip, blipInfo.sprite)
+        SetBlipSprite(blip, v.sprite)
         SetBlipDisplay(blip, 4)
-        SetBlipScale(blip, blipInfo.scale)
-        SetBlipColour(blip, blipInfo.color)
+        SetBlipScale(blip, v.scale)
+        SetBlipColour(blip, v.color)
         SetBlipAsShortRange(blip, true)
 
         BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString(blipInfo.name)
+        AddTextComponentString(v.name)
         EndTextCommandSetBlipName(blip)
     end
 end)
